@@ -36,10 +36,7 @@ public class VehiculoFile {
                 double precio = Double.parseDouble(vehicleData[3].trim().toLowerCase());
                 
                 vehiculos.add(new Vehiculo(marca, modelo, linea, precio));
-            
-            for (Vehiculo vehiculo: vehiculos){
-                System.out.println(vehiculo.getMarca() + vehiculo.getModelo() + vehiculo.getLinea() + " " + vehiculo.getValue());
-            }
+
             }
         } catch (Exception e) {
             System.out.println("Error to load vehicles " + e.getMessage());
