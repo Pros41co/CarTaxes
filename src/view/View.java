@@ -12,6 +12,9 @@ import javax.swing.JFrame;
  * @author Alex
  */
 public class View extends JFrame {
+   private TopPanel carPanel;
+   private CenterPanel discountPanel;
+   private BottomPanel resultPanel;
     
     public View(){
         
@@ -21,13 +24,21 @@ public class View extends JFrame {
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        TopPanel carPanel = new TopPanel();
+        carPanel = new TopPanel();
         add(carPanel, BorderLayout.NORTH);
         
-        CenterPanel discountPanel = new CenterPanel();
+        discountPanel = new CenterPanel();
         add(discountPanel, BorderLayout.CENTER);
         
-        BottomPanel resultPanel = new BottomPanel();
+        resultPanel = new BottomPanel();
         add(resultPanel, BorderLayout.SOUTH);
+    }
+    
+    public BottomPanel getBottomPanel() {
+        return resultPanel;
+    }
+    
+    public TopPanel getTopPanel() {
+        return carPanel;
     }
 }

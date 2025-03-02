@@ -8,7 +8,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.text.DecimalFormat;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -28,6 +30,10 @@ public class TopPanel extends JPanel{
     private JLabel labLinea;
     private JLabel labModelo;
     private JLabel labValor;
+    
+    private JButton butBuscar;
+    
+    private final static String BUSCAR = "buscar";
     
     
     public TopPanel(){
@@ -54,6 +60,11 @@ public class TopPanel extends JPanel{
         txtValor.setEditable(false);
         txtValor.setForeground(Color.BLUE);
         txtValor.setBackground(Color.WHITE);
+                
+        // Botón buscar.
+        butBuscar = new JButton("Buscar");
+        butBuscar.setActionCommand(BUSCAR);
+        
         
         
         // Adición de los componentes a la malla
@@ -65,6 +76,26 @@ public class TopPanel extends JPanel{
         add(txtModelo);
         add(labValor);
         add(txtValor);
+        add(new JLabel(""));
+        add(butBuscar);
          
+    }
+    
+    public String getMarca() {
+        return txtMarca.getText().trim().toLowerCase();
+    }
+    
+    public String getLinea() {
+        return txtLinea.getText().trim().toLowerCase();
+    }
+    
+    public String getModelo() {
+        return txtModelo.getText().trim().toLowerCase();
+    }
+    
+    public void cleanLabels() {
+        txtModelo.setText("");
+        txtLinea.setText("");
+        txtMarca.setText("");
     }
 }

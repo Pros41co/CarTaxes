@@ -26,6 +26,9 @@ public class BottomPanel extends JPanel{
     private JButton butLimpiar;
     private JButton butCalcular;
     
+    private final static String LIMPIAR = "limpiar";
+    private final static String CALCULAR = "calcular";
+    
     public BottomPanel(){
         setLayout(new GridLayout(2, 3));
         setPreferredSize(new Dimension(0, 65));
@@ -40,11 +43,27 @@ public class BottomPanel extends JPanel{
         txtTotal = new JTextField();
         
         butLimpiar = new JButton("Limpiar");
+        butLimpiar.setActionCommand(LIMPIAR);
+        
         butCalcular = new JButton("Calcular");
+        butCalcular.setActionCommand(CALCULAR);
         
         add(labTotal);
         add(txtTotal);
         add(butLimpiar);
         add(butCalcular);
     }
+    
+    public JButton getButLimpiar() {
+        return butLimpiar;
+    }
+    
+    public JButton getButCalcular() {
+        return butCalcular;
+    }
+    
+    public void cleanLabels() {
+        txtTotal.setText("");
+    }
+ 
 }
