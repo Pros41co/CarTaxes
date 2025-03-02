@@ -16,7 +16,7 @@ public class View extends JFrame {
     public View(){
         
         setTitle("Calculadora de Impuestos");
-        setSize(290, 300);
+        setSize(350, 300);
         setResizable(false);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
