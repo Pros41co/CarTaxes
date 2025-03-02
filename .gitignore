@@ -1,0 +1,57 @@
+# Ignorar archivos y carpetas generados automáticamente por NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/build/
+
+# Archivos específicos de NetBeans que no deben subirse
+nbactions.xml
+nb-configuration.xml
+
+# Archivos de compilación de Java
+*.class
+
+# Archivos de logs y temporales
+*.log
+hs_err_pid*
+
+# Configuración de IDEs (NetBeans, IntelliJ, Eclipse)
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Archivos innecesarios del sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias descargadas por Maven o Gradle
+/.mvn/
+/target/
+/out/
+/.gradle/
+/build/
+
+# Archivos generados por NetBeans
+/nbproject/private/
+/nbproject/build-impl.xml
+/nbproject/genfiles.properties
+/nbproject/project.properties
+/nbproject/project.xml
+
+# Archivos de compilación
+/build/
+/dist/
+/out/
+*.class
+
+# Configuración de IDEs y archivos del sistema
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
