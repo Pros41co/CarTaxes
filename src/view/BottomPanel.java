@@ -11,6 +11,7 @@ import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -47,6 +48,7 @@ public class BottomPanel extends JPanel{
         
         butCalcular = new JButton("Calcular");
         butCalcular.setActionCommand(CALCULAR);
+        butCalcular.setEnabled(false);
         
         add(labTotal);
         add(txtTotal);
@@ -62,8 +64,15 @@ public class BottomPanel extends JPanel{
         return butCalcular;
     }
     
+    public void setResult (String pago) {
+        txtTotal.setText(pago);
+    }
+    
     public void cleanLabels() {
         txtTotal.setText("");
     }
- 
+    
+    public void allowCalculate(){
+        butCalcular.setEnabled(true);
+    }    
 }

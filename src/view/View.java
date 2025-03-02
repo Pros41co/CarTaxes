@@ -41,4 +41,8 @@ public class View extends JFrame {
     public TopPanel getTopPanel() {
         return carPanel;
     }
+    
+    public CenterPanel getCenterPanel() {
+        return discountPanel;
+    }
 }

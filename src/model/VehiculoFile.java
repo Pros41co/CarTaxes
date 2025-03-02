@@ -15,7 +15,7 @@ import model.Vehiculo;
  * @author Alex
  */
 public class VehiculoFile {
-    private final static String filePath = "./resources/vehiculos.csv";
+    private final static String filePath = "src/resources/vehiculos.csv";
     private List<Vehiculo> vehiculos = new ArrayList<>();
     
     public VehiculoFile () {
@@ -25,20 +25,26 @@ public class VehiculoFile {
     private void loadVehicles() {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))){
             String line;
-            line = br.readLine();
-            while (line != null) {  
+
+            while ((line = br.readLine()) != null) {  
+                if (line.trim().isEmpty()) continue;
+                
                 String[] vehicleData = line.split(",");
-                String marca = vehicleData[0];
-                int modelo = Integer.parseInt(vehicleData[1]);
-                String linea = vehicleData[2]; 
-                double precio = Double.parseDouble(vehicleData[3]);
+                String marca = vehicleData[0].trim().toLowerCase();
+                int modelo = Integer.parseInt(vehicleData[1].trim());
+                String linea = vehicleData[2].trim().toLowerCase(); 
+                double precio = Double.parseDouble(vehicleData[3].trim().toLowerCase());
                 
                 vehiculos.add(new Vehiculo(marca, modelo, linea, precio));
-                line = br.readLine();
+            
+            for (Vehiculo vehiculo: vehiculos){
+                System.out.println(vehiculo.getMarca() + vehiculo.getModelo() + vehiculo.getLinea() + " " + vehiculo.getValue());
+            }
             }
         } catch (Exception e) {
-            System.out.println("Error to load vehicles");
+            System.out.println("Error to load vehicles " + e.getMessage());
         }
+       
     }
         
     public Vehiculo searchVehicle(String marca, int modelo, String linea){

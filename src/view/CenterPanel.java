@@ -39,4 +39,22 @@ public class CenterPanel extends JPanel{
         add(cbPublico);
         add(cbCuenta);
     }
+    
+    public boolean isProntoPago(){
+        return cbPago.isSelected();
+    }
+    
+    public boolean isPublico(){
+        return cbPublico.isSelected();
+    }
+    
+    public boolean isTraslado(){
+        return cbCuenta.isSelected();
+    }
+    
+    public void unselectButtons() {
+        cbPago.setSelected(false);
+        cbCuenta.setSelected(false);
+        cbPublico.setSelected(false);
+    }
 }

@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
@@ -81,6 +82,11 @@ public class TopPanel extends JPanel{
          
     }
     
+    public void setValor(String precio){
+        txtValor.setText(String.valueOf(precio));
+    }
+    
+    
     public String getMarca() {
         return txtMarca.getText().trim().toLowerCase();
     }
@@ -89,8 +95,22 @@ public class TopPanel extends JPanel{
         return txtLinea.getText().trim().toLowerCase();
     }
     
-    public String getModelo() {
-        return txtModelo.getText().trim().toLowerCase();
+    public int getModelo() {
+        int modelo = 2000;
+        try {
+            String modeloText = txtModelo.getText().trim().toLowerCase();
+            modelo = Integer.parseInt(modeloText);
+        } catch (Exception e) {
+            cleanLabels();
+            JOptionPane.showMessageDialog(this, "Verificar que modelo sea un valor numérico",
+                    "Error en el tipo de dato ingresado",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        return modelo;
+    }
+    
+    public String getValor() {
+        return txtValor.getText();
     }
     
     public void cleanLabels() {
@@ -98,4 +118,14 @@ public class TopPanel extends JPanel{
         txtLinea.setText("");
         txtMarca.setText("");
     }
+    
+    public JButton getButBuscar() {
+        return butBuscar;
+    }
+    
+    public void errorNotFound() {
+        JOptionPane.showMessageDialog(this, "Vehículo no encontrado", "Not Found", JOptionPane.ERROR_MESSAGE);
+    }
+    
+
 }
