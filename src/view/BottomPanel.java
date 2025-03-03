@@ -41,7 +41,9 @@ public class BottomPanel extends JPanel{
         
         // 
         labTotal = new JLabel("Total a pagar");
+        
         txtTotal = new JTextField();
+        txtTotal.setEditable(false);
         
         butLimpiar = new JButton("Limpiar");
         butLimpiar.setActionCommand(LIMPIAR);

@@ -33,9 +33,10 @@ public class VehiculoFile {
                 String marca = vehicleData[0].trim().toLowerCase();
                 int modelo = Integer.parseInt(vehicleData[1].trim());
                 String linea = vehicleData[2].trim().toLowerCase(); 
-                double precio = Double.parseDouble(vehicleData[3].trim().toLowerCase());
+                int cilindraje = Integer.parseInt(vehicleData[3]);
+                double precio = Double.parseDouble(vehicleData[4].trim().toLowerCase());
                 
-                vehiculos.add(new Vehiculo(marca, modelo, linea, precio));
+                vehiculos.add(new Vehiculo(marca, modelo, linea, cilindraje, precio));
 
             }
         } catch (Exception e) {

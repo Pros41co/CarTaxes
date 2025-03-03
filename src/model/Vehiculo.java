@@ -11,15 +11,18 @@ package model;
 public class Vehiculo {
     String marca;
     int modelo;
+    int cilindraje;
     String linea;
     double precio;
     
-    public Vehiculo(String marca, int modelo, String linea, double precio) {
+    
+    public Vehiculo(String marca, int modelo, String linea, int cilindraje, double precio ) {
         this.marca = marca;
         this.modelo = modelo;
         this.linea = linea;
         this.precio = precio;
-    }
+        this.cilindraje = cilindraje;
+    }   
                 
     public String getMarca() {
         return marca;

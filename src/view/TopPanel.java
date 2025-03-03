@@ -25,12 +25,16 @@ public class TopPanel extends JPanel{
     private JTextField txtMarca;
     private JTextField txtLinea;
     private JTextField txtModelo;
+    private JTextField txtCilindraje;
     private JTextField txtValor;
     
     private JLabel labMarca;
     private JLabel labLinea;
     private JLabel labModelo;
+    private JLabel labCilindraje;
     private JLabel labValor;
+
+
     
     private JButton butBuscar;
     
@@ -39,7 +43,7 @@ public class TopPanel extends JPanel{
     
     public TopPanel(){
         // Forma
-        setLayout(new GridLayout(5, 2));
+        setLayout(new GridLayout(6, 2));
         setPreferredSize(new Dimension(0, 130));
         
         // Borde
@@ -51,11 +55,13 @@ public class TopPanel extends JPanel{
         labMarca = new JLabel("Marca");
         labLinea = new JLabel("Línea");
         labModelo = new JLabel("Modelo");
+        labCilindraje = new JLabel("Cilindraje");
         labValor = new JLabel("Valor");
         
         txtMarca = new JTextField();
         txtLinea = new JTextField();
         txtModelo = new JTextField();
+        txtCilindraje = new JTextField();
         txtValor = new JTextField();
         
         txtValor.setEditable(false);
@@ -75,6 +81,8 @@ public class TopPanel extends JPanel{
         add(txtLinea);
         add(labModelo);
         add(txtModelo);
+        add(labCilindraje);
+        add(txtCilindraje);
         add(labValor);
         add(txtValor);
         add(new JLabel(""));
@@ -96,17 +104,29 @@ public class TopPanel extends JPanel{
     }
     
     public int getModelo() {
-        int modelo = 2000;
+        int modelo = 0;
         try {
             String modeloText = txtModelo.getText().trim().toLowerCase();
             modelo = Integer.parseInt(modeloText);
         } catch (Exception e) {
-            cleanLabels();
             JOptionPane.showMessageDialog(this, "Verificar que modelo sea un valor numérico",
                     "Error en el tipo de dato ingresado",
                     JOptionPane.ERROR_MESSAGE);
         }
         return modelo;
+    }
+    
+    public int getCilindraje() {
+        int cilindraje = 0;
+        try {
+            String cilindrajeText = txtCilindraje.getText();
+            cilindraje = Integer.parseInt(cilindrajeText);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this, "Verificar que el cilindraje sea un valor numérico enhtero",
+                    "Error en el tipo de dato ingresado",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        return cilindraje;
     }
     
     public String getValor() {
