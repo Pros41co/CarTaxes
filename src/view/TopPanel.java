@@ -22,6 +22,12 @@ import javax.swing.border.TitledBorder;
  * @author Alex
  */
 public class TopPanel extends JPanel{
+    /*
+    Herada de Jpanel. Contiene las etiquetas y labels para la introducción de datos
+    de un vehículo por parte del usuario. Cuenta con el botón de búsqueda para poder
+    indicarle al controlador que se debe buscar un vehículo en VehiculoFile. Cuenta
+    con algunos mensajes de error.
+    */
     private JTextField txtMarca;
     private JTextField txtLinea;
     private JTextField txtModelo;

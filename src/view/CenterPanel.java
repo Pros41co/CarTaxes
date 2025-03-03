@@ -18,6 +18,11 @@ import javax.swing.border.TitledBorder;
  * @author Alex
  */
 public class CenterPanel extends JPanel{
+    /*
+    Clase que herada de JPanel. Almacena los botones para la selección de descuentos.
+    Cuenta con métodos para desmarcar los botones de selección de descuentos y verificación
+    de la selección en los mismos.
+    */
     private JCheckBox cbPago;
     private JCheckBox cbPublico;
     private JCheckBox cbCuenta;

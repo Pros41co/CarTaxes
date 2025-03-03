@@ -20,6 +20,13 @@ import view.TopPanel;
  * @author Alex
  */
 public class Controller implements ActionListener{
+    /*
+    Clase encargada de ser el intermediario entre la interfaz gráfica y los 
+    cálculos que se desarrollan en el módelo con respecto a la aplicación de descuentos.
+    
+    No cuenta con métodos utilizables, adicionales a la escucha de eventos por parte del usuario.
+    */
+    
     private View view;
     private TopPanel topPanel;
     private BottomPanel bottomPanel;

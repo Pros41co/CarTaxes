@@ -9,6 +9,11 @@ package model;
  * @author Alex
  */
 public class Vehiculo {
+    /*
+    Clase vehículo. Encargado de gestionar todos los vehículos que se almacenan 
+    en los objetos de la clase VehiculoFile. Representa un vehículo con su marca,
+    modeo, cilindraje, linea y precio.
+    */
     String marca;
     int modelo;
     int cilindraje;

@@ -12,12 +12,14 @@ import view.View;
  * @author Alex
  */
 public class Main {
+    /*
+    Clase main, encargada de iniciar el controlador y presentar la interfaz gráfica
+    al usuario.
+    */
     public static void main(String[] args) {
         View view = new View();
         Controller controller = new Controller(view);
         
         view.setVisible(true);
-        
-        
     }
 }

@@ -12,6 +12,10 @@ import javax.swing.JFrame;
  * @author Alex
  */
 public class View extends JFrame {
+    /*
+    Clase principal encargada de la interfaz gráfica del usuario. La cual
+    está compuesta por las clases Top, center y Bottom Panel.
+    */
    private TopPanel carPanel;
    private CenterPanel discountPanel;
    private BottomPanel resultPanel;

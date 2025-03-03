@@ -21,6 +21,12 @@ import javax.swing.border.TitledBorder;
  * @author Alex
  */
 public class BottomPanel extends JPanel{
+    /*
+    Hereda de la clase JPanel. Almacena la sección de muestra de resultados y
+    limpieza de la interfaz.
+    
+    Cuenta con 5 métodos mediante los cuales poder interactuar con esta sección.
+    */
     private JTextField txtTotal;
     private JLabel labTotal;
     

@@ -15,6 +15,10 @@ import model.Vehiculo;
  * @author Alex
  */
 public class VehiculoFile {
+    /*
+    Clase que gestiona el archivo csv "Vehiculos". Encargado de gestionar y consultar los vehículos,
+    así como de cargarlos en el momento de la ejecución del programa principal.
+    */
     private final static String filePath = "src/resources/vehiculos.csv";
     private List<Vehiculo> vehiculos = new ArrayList<>();
     
@@ -23,6 +27,11 @@ public class VehiculoFile {
     }
     
     private void loadVehicles() {
+        /*
+        Método encargado de cargar en la lista de Vehículos, objetos de la clase Vehículo
+        creados a partir de registros del archivo csv vehiculos.
+        */
+        
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))){
             String line;
 
@@ -46,6 +55,12 @@ public class VehiculoFile {
     }
         
     public Vehiculo searchVehicle(String marca, int modelo, String linea){
+        /*
+        Búsqueda de un vehículo cargado en el listado de vehículos. Retorna
+        un vehículo, siempre y cuando los valores de marca, modelo y
+        linea coincidan con alguno de los vehículos almacenados. De lo contrario,
+        se devolverá null.
+        */
         for (Vehiculo vehiculo: vehiculos) {
             if (vehiculo.getMarca().equals(marca) &&
                 vehiculo.getModelo() == modelo &&
